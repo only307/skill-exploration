@@ -1,0 +1,9 @@
+# External engines, not vendored source. Install in a project virtual environment.
+docling==2.135.0
+# 3.10 removed an API imported by Docling 2.135.0; verified against wheel contents.
+rapidocr==3.9.2
+md2x==0.1.0
+pypdf==6.19.0
+Pillow==12.3.0
+onnxruntime==1.30.0
+pypandoc_binary==1.17

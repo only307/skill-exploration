@@ -1,0 +1,4 @@
+interface:
+  display_name: "文档格式转换路由"
+  short_description: "本地转换 PDF、Word 与 Markdown，保留图片并验证 Mermaid 图表"
+  default_prompt: "使用 $document-conversion-router 转换这份文档，检查真实格式、资源引用和输出可用性。"

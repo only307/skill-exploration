@@ -1,0 +1,7 @@
+.venv/
+.tools/
+node_modules/
+__pycache__/
+*.pyc
+tests/artifacts/
+.router-*/

@@ -1,0 +1,24 @@
+# 官方来源与依赖许可
+
+核查：2026-10-09（Asia/Shanghai）。这里列出路由实际调用或支持的依赖、基线版本、许可和使用条件。版本与模型快照是当日环境记录，不表示未来版本已通过兼容性或许可审查。
+
+| 项目 | 官方仓库 / 文档 | 使用版本或审查状态 | 许可证 / 许可链接 | 调用、本地/远程、免费路径与注意事项 |
+| --- | --- | --- | --- | --- |
+| Docling | [仓库](https://github.com/docling-project/docling) / [CLI](https://docling-project.github.io/docling/reference/cli/) / [官方 Skill](https://github.com/docling-project/docling/tree/main/docling/.agents/skills/docling) | 实装 2.135.0；许可核查快照 `b2a59b9fa1a3` | [MIT](https://github.com/docling-project/docling/blob/main/LICENSE) | 本地 Python API；无需许可费、API 费、账号；首次下载模型，之后离线。可选远程服务不启用；模型另有许可。 |
+| MD2X | [仓库](https://github.com/ChaoticQubit/MD2X) / [官方包](https://pypi.org/project/md2x/) | 实装 0.1.0；审查 main `d94038d4e9e9` | [MIT](https://github.com/ChaoticQubit/MD2X/blob/main/LICENSE) | 本地 CLI，根据实际 help 选择语法；不安装 `[ai]`，不调用 site。基础转换无账号、Key、API 费或许可费；可选 AI 提供商/部署可能收费。 |
+| Pandoc | [仓库](https://github.com/jgm/pandoc) / [手册](https://pandoc.org/MANUAL.html) | 实装 3.9，通过 pypandoc_binary 1.17 安装 | [GPL-2.0-or-later](https://github.com/jgm/pandoc/blob/main/COPYING.md)；[pypandoc MIT](https://github.com/JessicaTegner/pypandoc/blob/master/LICENSE) | 独立进程 AST 读写和输出；完全本地、无账号/API 费。重分发二进制要审查 GPL，不可标成本仓库 MIT。 |
+| Mermaid CLI | [仓库](https://github.com/mermaid-js/mermaid-cli) / [用法](https://github.com/mermaid-js/mermaid-cli#usage) | 实装 12.0.0，Node 直接执行 src/cli.js | [MIT](https://github.com/mermaid-js/mermaid-cli/blob/master/LICENSE) | 本地 PNG；无需 API/账号/模型。浏览器可能首次下载，之后可使用已有本地 Edge/Chrome。 |
+| Node.js | [仓库](https://github.com/nodejs/node) / [下载](https://nodejs.org/en/download) | 实用 v26.4.0（已有） | [MIT 及捆绑第三方声明](https://github.com/nodejs/node/blob/main/LICENSE) | 本地程序，无账号/API 费；不复制运行时。 |
+| XeLaTeX / TinyTeX | [XeTeX](https://github.com/TeX-Live/xetex) / [TinyTeX](https://github.com/rstudio/tinytex-releases) / [说明](https://yihui.org/tinytex/) | TinyTeX v2026.10（TeX Live 2026），用户缓存中更新基础设施并补齐 xeCJK | [XeTeX COPYING](https://github.com/TeX-Live/xetex/blob/master/source/texk/web2c/xetexdir/COPYING)；[TeX Live 许可](https://tug.org/texlive/copying.html) | 本地 PDF，无账号/API 费。TeX 发行版包含 GPL、LPPL、字体等不同许可；不能统称 MIT。首次装包联网，运行时提前备齐包。 |
+| Heron 布局模型 | [模型卡与文件](https://huggingface.co/docling-project/docling-layout-heron) | 实用缓存快照 `8f39ad3c0b4c58e9c2d2c84a38465abf757272d8` | 模型卡 Apache-2.0 | 公开本地权重；无需账号/Key/许可费。缓存不进入路由仓库。 |
+| TableFormer / Docling models | [实际 v2.3.0 模型卡](https://huggingface.co/docling-project/docling-models/blob/v2.3.0/README.md) | 实用 `v2.3.0`，缓存快照 `fc0f2d45e2218ea24bce5045f58a389aed16dc23` | 实际版本 CDLA-Permissive-2.0；[最新 main 卡](https://huggingface.co/docling-project/docling-models)标注双许可 CDLA-Permissive-2.0 / Apache-2.0 | 本地表格权重，不沿用 Docling 代码的 MIT；不提交权重。 |
+| Egret Medium（高质量） | [模型卡](https://huggingface.co/docling-project/docling-layout-egret-medium) | 实用缓存快照 `77ede7cc7bed96d853c58f319734803d6ea2ea5c`；CPU 高质量样例通过 | 模型卡 Apache-2.0 | 本地 CPU 支持，额外权重下载；无远程费用。 |
+| RapidOCR / PP-OCR | [RapidOCR](https://github.com/RapidAI/RapidOCR) / [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) | RapidOCR 固定 3.9.2；3.10.0 与当前 Docling 接口不兼容 | [RapidOCR Apache-2.0](https://github.com/RapidAI/RapidOCR/blob/main/LICENSE) / [PaddleOCR Apache-2.0](https://github.com/PaddlePaddle/PaddleOCR/blob/main/LICENSE) | 本地 ONNX OCR，权重按语言下载；不提交 OCR 数据。具体模型来源以安装版本注册表为准，新增模型须再查其许可。 |
+| ONNX Runtime | [仓库/文档](https://github.com/microsoft/onnxruntime) | 实装 1.30.0 CPU | [MIT 及第三方声明](https://github.com/microsoft/onnxruntime/blob/main/LICENSE) | 独立安装依赖，无账号/API 费；不是本仓库源码。 |
+| pypdf / Pillow / pypdfium2 | [pypdf](https://github.com/py-pdf/pypdf) / [Pillow](https://github.com/python-pillow/Pillow) / [pypdfium2](https://github.com/pypdfium2-team/pypdfium2) | 实装 6.19.0 / 12.3.0 / 5.14.0 | [pypdf BSD-3-Clause](https://github.com/py-pdf/pypdf/blob/main/LICENSE) / [Pillow MIT-CMU](https://github.com/python-pillow/Pillow/blob/main/LICENSE) / [pypdfium2 Apache/BSD 与 PDFium 第三方许可](https://github.com/pypdfium2-team/pypdfium2#licensing) | 本地结构/图像验证及 Docling PDF 后端；无 API、账号或模型。 |
+| LibreOffice（可选） | [源码](https://github.com/LibreOffice/core) / [命令行文档](https://help.libreoffice.org/latest/en-US/text/shared/guide/start_parameters.html) | 本机未安装，直接导出路径未实测 | [MPL-2.0 / LGPLv3+ 及第三方](https://www.libreoffice.org/about-us/licenses/) | 本地 headless；无许可费/API/账号，安装时联网；不自动安装。 |
+| Graphviz（可选诊断） | [源码](https://gitlab.com/graphviz/graphviz) / [文档](https://graphviz.org/docs/) | 未安装，不参与默认路由 | [EPL-1.0 及第三方](https://graphviz.org/license/) | 仅报告可用性；不作为默认 Mermaid 备用。 |
+
+“免费”分项：默认引擎无项目许可费用、无 API 调用费、无账号/Key、无云额度；安装工具、下载公开模型/浏览器需要网络，准备齐备后转换可离线。Docling 远程服务和 MD2X 可选 AI/部署功能存在，但路由器没有启用接口。开源依赖依然有各自的保留声明、再分发和字体许可义务。
+
+本 Skill 的原创脚本、指令、测试、配置和文档采用 [MIT LICENSE](../LICENSE)，署名为 `2026 only307`。独立安装的依赖位于被忽略的 `.venv`、`.tools` 和用户缓存，不随源码发布。[THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md)保留 Docling、MD2X 的原始版权和完整许可文本；其他依赖及模型的许可独立适用。
