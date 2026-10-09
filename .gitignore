@@ -1,0 +1,46 @@
+# Secrets and machine-local configuration
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+credentials.*.json
+!credentials.example.json
+!credentials.template.json
+
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs, temporary files, and caches
+*.log
+*.tmp
+*.temp
+*.bak
+.cache/
+tmp/
+temp/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local environments, dependencies, and generated output
+.venv/
+venv/
+node_modules/
+dist/
+build/
+coverage/
+.coverage
